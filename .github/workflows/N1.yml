@@ -4,16 +4,10 @@ on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
-      days:
-        description: 'Number of days.'
-        required: true
-        default: 60
-      minimum_runs:
-        description: 'The minimum runs to keep for each workflow.'
-        required: true
-        default: 6
-  schedule:
-    - cron: 0 23 * * *      
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'     
 env:
   UPLOAD_COWTRANSFER: false
   RELEASE: true
